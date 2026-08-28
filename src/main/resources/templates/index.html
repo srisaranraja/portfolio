@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Srisaran R | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #0f172a;
+            color: #f8fafc;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: #111827;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        nav h2 {
+            color: #38bdf8;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero h3 {
+            font-size: 25px;
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #cbd5e1;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #38bdf8;
+            transform: translateY(-2px);
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 80px 8%;
+        }
+
+        section h2 {
+            text-align: center;
+            color: #38bdf8;
+            font-size: 38px;
+            margin-bottom: 45px;
+        }
+
+        /* ABOUT */
+        .about-box {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+            color: #cbd5e1;
+            font-size: 18px;
+        }
+
+        .education {
+            margin-top: 30px;
+            padding: 25px;
+            background: #1e293b;
+            border-radius: 12px;
+        }
+
+        .education h3 {
+            color: #38bdf8;
+            margin-bottom: 8px;
+        }
+
+        /* SKILLS */
+        .skills {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .skill {
+            background: #1e293b;
+            border: 1px solid #334155;
+            padding: 16px 28px;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+        }
+
+        /* PROJECTS */
+        .project-box {
+            max-width: 700px;
+            margin: auto;
+            text-align: center;
+            background: #1e293b;
+            padding: 35px;
+            border-radius: 15px;
+            border: 1px solid #334155;
+        }
+
+        .project-box h3 {
+            color: #38bdf8;
+            margin-bottom: 15px;
+        }
+
+        .project-box p {
+            color: #cbd5e1;
+        }
+
+        /* CONTACT */
+        .contact {
+            max-width: 650px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .contact p {
+            margin: 15px 0;
+            color: #cbd5e1;
+            font-size: 18px;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact input,
+        .contact textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            background: #1e293b;
+            color: white;
+            font-size: 16px;
+        }
+
+        .contact textarea {
+            resize: vertical;
+        }
+
+        .contact input:focus,
+        .contact textarea:focus {
+            outline: none;
+            border-color: #38bdf8;
+        }
+
+        .contact button {
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #111827;
+            color: #94a3b8;
+        }
+
+        /* MOBILE */
+        @media (max-width: 650px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero h3 {
+                font-size: 20px;
+            }
+
+            section {
+                padding: 60px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <h2>Srisaran R</h2>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+
+<!-- HOME -->
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>Hi, I'm <span>Srisaran</span></h1>
+
+        <h3>Java Full Stack Developer</h3>
+
+        <p>
+            B.E. Electronics and Communication Engineering graduate
+            passionate about Java, Spring Boot and web development.
+        </p>
+
+        <a href="#about" class="btn">Explore My Portfolio</a>
+
+        <a href="/resume/Srisaran_Resume.pdf"
+           class="btn"
+           target="_blank">
+            Download Resume
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section id="about">
+
+    <h2>About Me</h2>
+
+    <div class="about-box">
+
+        <p>
+            I am Srisaran R, a B.E. Electronics and Communication
+            Engineering graduate from Anjalai Ammal Mahalingam
+            Engineering College. I am interested in software development
+            and currently developing my skills in Java, Spring Boot,
+            MySQL and web technologies.
+        </p>
+
+        <div class="education">
+
+            <h3>Education</h3>
+
+            <p>
+                <strong>B.E. Electronics and Communication Engineering</strong>
+            </p>
+
+            <p>
+                Anjalai Ammal Mahalingam Engineering College
+            </p>
+
+            <p>
+                Graduation Year: 2026
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+<section id="skills">
+
+    <h2>My Skills</h2>
+
+    <div class="skills">
+
+        <div class="skill">Java</div>
+
+        <div class="skill">Spring Boot</div>
+
+        <div class="skill">MySQL</div>
+
+        <div class="skill">HTML</div>
+
+        <div class="skill">CSS</div>
+
+        <div class="skill">JavaScript</div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+<section id="projects">
+
+    <h2>Projects</h2>
+
+    <div class="project-box">
+
+        <h3>Currently Building</h3>
+
+        <p>
+            I am currently building my first full-stack personal
+            portfolio website using HTML, CSS, Java, Spring Boot
+            and MySQL.
+        </p>
+
+        <br>
+
+        <p>
+            More projects will be added as I continue developing
+            my software development skills.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact">
+
+    <h2>Contact Me</h2>
+
+    <div class="contact">
+
+        <form id="contactForm">
+
+            <input type="text"
+                   id="name"
+                   placeholder="Your Name"
+                   required>
+
+            <input type="email"
+                   id="email"
+                   placeholder="Your Email"
+                   required>
+
+            <textarea id="message"
+                      placeholder="Your Message"
+                      rows="6"
+                      required></textarea>
+
+            <button type="submit" class="btn">
+                Send Message
+            </button>
+
+        </form>
+
+        <p id="status"></p>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <p>
+        © 2026 Srisaran R. All Rights Reserved.
+    </p>
+
+</footer>
+<script>
+    document.getElementById("contactForm").addEventListener("submit", async function(event) {
+
+        event.preventDefault();
+
+        const contact = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            message: document.getElementById("message").value
+        };
+
+        try {
+
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(contact)
+            });
+
+            if (response.ok) {
+                document.getElementById("status").innerText =
+                    "Message sent successfully!";
+
+                document.getElementById("contactForm").reset();
+
+            } else {
+                document.getElementById("status").innerText =
+                    "Something went wrong.";
+            }
+
+        } catch (error) {
+
+            document.getElementById("status").innerText =
+                "Unable to connect to server.";
+
+        }
+    });
+</script>
+</body>
+</html>
