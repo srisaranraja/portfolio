@@ -96,6 +96,8 @@
             text-decoration: none;
             border-radius: 8px;
             transition: 0.3s;
+            border: none;
+            cursor: pointer;
         }
 
         .btn:hover {
@@ -159,23 +161,46 @@
         }
 
         /* PROJECTS */
+        .projects-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
         .project-box {
             max-width: 700px;
+            width: 100%;
             margin: auto;
             text-align: center;
             background: #1e293b;
             padding: 35px;
             border-radius: 15px;
             border: 1px solid #334155;
+            transition: 0.3s;
+        }
+
+        .project-box:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
         }
 
         .project-box h3 {
             color: #38bdf8;
             margin-bottom: 15px;
+            font-size: 24px;
         }
 
         .project-box p {
             color: #cbd5e1;
+            margin-bottom: 15px;
+        }
+
+        .project-links {
+            margin-top: 20px;
+        }
+
+        .project-links .btn {
+            margin: 5px;
         }
 
         /* CONTACT */
@@ -190,6 +215,7 @@
             color: #cbd5e1;
             font-size: 18px;
         }
+
         .contact form {
             display: flex;
             flex-direction: column;
@@ -242,6 +268,8 @@
             nav ul {
                 gap: 15px;
                 font-size: 14px;
+                flex-wrap: wrap;
+                justify-content: center;
             }
 
             .hero h1 {
@@ -254,6 +282,10 @@
 
             section {
                 padding: 60px 6%;
+            }
+
+            .project-box {
+                padding: 25px;
             }
         }
     </style>
@@ -348,15 +380,10 @@
     <div class="skills">
 
         <div class="skill">Java</div>
-
         <div class="skill">Spring Boot</div>
-
         <div class="skill">MySQL</div>
-
         <div class="skill">HTML</div>
-
         <div class="skill">CSS</div>
-
         <div class="skill">JavaScript</div>
 
     </div>
@@ -369,22 +396,60 @@
 
     <h2>Projects</h2>
 
-    <div class="project-box">
+    <div class="projects-container">
 
-        <h3>Currently Building</h3>
+        <!-- Portfolio Project -->
+        <div class="project-box">
 
-        <p>
-            I am currently building my first full-stack personal
-            portfolio website using HTML, CSS, Java, Spring Boot
-            and MySQL.
-        </p>
+            <h3>Personal Portfolio Website</h3>
 
-        <br>
+            <p>
+                A full-stack personal portfolio website showcasing my
+                skills, education and projects. It includes a contact
+                form connected to a Spring Boot backend and MySQL database.
+            </p>
 
-        <p>
-            More projects will be added as I continue developing
-            my software development skills.
-        </p>
+            <p>
+                <strong>Technologies:</strong>
+                Java, Spring Boot, MySQL, HTML, CSS, JavaScript
+            </p>
+
+        </div>
+
+
+        <!-- Task Management Project -->
+        <div class="project-box">
+
+            <h3>Task Management Application</h3>
+
+            <p>
+                A full-stack Task Management Application that allows users
+                to create, edit, update, complete and delete tasks.
+                Task data is stored securely in an Aiven cloud MySQL database.
+            </p>
+
+            <p>
+                <strong>Technologies:</strong>
+                Java, Spring Boot, MySQL, HTML, CSS, JavaScript
+            </p>
+
+            <div class="project-links">
+
+                <a href="https://task-management-application-3-boop.onrender.com"
+                   class="btn"
+                   target="_blank">
+                    Live Demo
+                </a>
+
+                <a href="https://github.com/srisaranraja/task-management-application"
+                   class="btn"
+                   target="_blank">
+                    GitHub
+                </a>
+
+            </div>
+
+        </div>
 
     </div>
 
@@ -436,7 +501,10 @@
     </p>
 
 </footer>
+
+
 <script>
+
     document.getElementById("contactForm").addEventListener("submit", async function(event) {
 
         event.preventDefault();
@@ -458,14 +526,17 @@
             });
 
             if (response.ok) {
+
                 document.getElementById("status").innerText =
                     "Message sent successfully!";
 
                 document.getElementById("contactForm").reset();
 
             } else {
+
                 document.getElementById("status").innerText =
                     "Something went wrong.";
+
             }
 
         } catch (error) {
@@ -474,7 +545,10 @@
                 "Unable to connect to server.";
 
         }
+
     });
+
 </script>
+
 </body>
 </html>
